@@ -21,6 +21,6 @@ Bu proje, Hamming kodlarının tek hata düzeltme ve çift hata tespit etme (SEC
 
 1. Bit sayısını seçin
 2. İkili veri girin
-3. Hamming Kodunu Hesapla butonuna basın
+3. 'Hamming Kodunu Hesapla' butonuna basın
 4. Hata ekleyin
 5. Hata tespiti ve düzeltmeyi gözlemleyin
