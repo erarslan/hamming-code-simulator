@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hamming SEC-DED Kod Simülatörü</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hamming SEC-DED Kod Simülatörü</h1>
+
+      <div class="section">
+        <h2>Veri Girişi</h2>
+        <div class="form-group">
+          <label for="bitSize">Bit Sayısı:</label>
+          <select id="bitSize">
+            <option value="8">8 bit</option>
+            <option value="16">16 bit</option>
+            <option value="32">32 bit</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="inputData">İkili Sayı Girişi:</label>
+          <input type="text" id="inputData" placeholder="Örnek: 10101010" />
+        </div>
+        <div class="button-container">
+          <button id="encodeBtn" class="primary-button">
+            Hamming Kodunu Hesapla
+          </button>
+        </div>
+        <div id="validationMessage" class="message"></div>
+
+        <div id="encodedResult" class="result-container">
+          <h3>Hamming Kodu ile Kodlanmış Veri</h3>
+          <div class="bit-container" id="encodedDataDisplay"></div>
+          <div class="legend">
+            <span class="data-bit">Veri Biti</span>
+            <span class="parity-bit">Parite Biti</span>
+            <span class="overall-parity">Genel Parite</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Hata Simülasyonu</h2>
+        <div class="form-group">
+          <label for="errorBitPosition">1. Hata Biti:</label>
+          <input type="number" id="errorBitPosition" min="1" value="1" />
+        </div>
+        <div class="form-group">
+          <label for="secondErrorBitPosition">2. Hata Biti</label>
+          <input
+            type="number"
+            id="secondErrorBitPosition"
+            min="1"
+            placeholder="Opsiyonel"
+          />
+        </div>
+        <div class="button-container">
+          <button id="injectErrorBtn" class="primary-button" disabled>
+            Hata Enjekte Et
+          </button>
+        </div>
+
+        <div id="errorResult" class="result-container">
+          <h3>Hatalı Veri</h3>
+          <div class="bit-container" id="errorDataDisplay"></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Hata Tespiti ve Düzeltme</h2>
+        <div class="button-container">
+          <button id="detectErrorBtn" class="primary-button" disabled>
+            Hatayı Tespit Et ve Düzelt
+          </button>
+        </div>
+
+        <div id="correctionResult" class="result-container">
+          <h3>Hata Tespiti Sonucu</h3>
+          <div id="errorMessage" class="message"></div>
+          <div class="bit-container" id="correctedDataDisplay"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

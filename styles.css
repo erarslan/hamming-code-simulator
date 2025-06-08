@@ -1,0 +1,271 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #3498db;
+}
+
+h2 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 1.4em;
+}
+
+h3 {
+  color: #34495e;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.section {
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  border-left: 4px solid #3498db;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5px 0;
+}
+
+label {
+  display: inline-block;
+  width: 150px;
+  font-weight: bold;
+  color: #34495e;
+}
+
+input,
+select {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-right: 10px;
+  min-width: 200px;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.message {
+  margin: 15px 0;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.error {
+  background-color: #ffecec;
+  color: #e74c3c;
+  border-left: 4px solid #e74c3c;
+}
+
+.success {
+  background-color: #e7f9e7;
+  color: #27ae60;
+  border-left: 4px solid #27ae60;
+}
+
+.result-container {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: #f0f7ff;
+  border-radius: 8px;
+  border-left: 5px solid #3498db;
+  display: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.result-container h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.bit-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+  font-family: monospace;
+  font-size: 18px;
+  gap: 5px;
+}
+
+.bit {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  cursor: default;
+  position: relative;
+  font-weight: bold;
+}
+
+.bit:hover::after {
+  content: attr(data-position);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #34495e;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.data-bit {
+  background-color: #e8f4fc;
+}
+
+.parity-bit {
+  background-color: #ffe8e8;
+}
+
+.overall-parity {
+  background-color: #e8fff0;
+}
+
+.error-bit {
+  background-color: #ffcccc;
+  animation: pulse 1.5s infinite;
+}
+
+.corrected-bit {
+  background-color: #ccffcc;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
+
+.legend {
+  display: flex;
+  margin-top: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.legend span {
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.legend .data-bit {
+  background-color: #e8f4fc;
+  border: 1px solid #3498db;
+}
+
+.legend .parity-bit {
+  background-color: #ffe8e8;
+  border: 1px solid #e74c3c;
+}
+
+.legend .overall-parity {
+  background-color: #e8fff0;
+  border: 1px solid #27ae60;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.primary-button {
+  padding: 12px 24px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 220px;
+  text-align: center;
+}
+
+.primary-button:hover {
+  background-color: #2980b9;
+}
+
+.primary-button:active {
+  background-color: #1f6aa5;
+}
+
+.primary-button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
